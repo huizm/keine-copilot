@@ -26,6 +26,7 @@ public class Completion
             Prompts = { prompt },
         };
         Response<Completions> responses = _client.GetCompletions(completionsOptions);
+        // if (responses.HasValue) Console.WriteLine("completion has value");
         var reply = responses.Value.Choices[0].Text;
         return reply;
     }
